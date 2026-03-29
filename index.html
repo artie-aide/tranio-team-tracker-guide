@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как заполнять отчёт в Telegram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #ffffffcf;
+            background: #191919;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #ffffff52;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ffffff14;
+            margin: 32px 0;
+        }
+
+        ul {
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        code {
+            background: #ffffff0e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SFMono-Regular', 'Menlo', monospace;
+            font-size: 14px;
+            color: #ff7369;
+        }
+
+        .code-block {
+            background: #ffffff0e;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 8px 0 16px;
+            font-family: 'SFMono-Regular', 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            color: #ffffffa0;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .code-block:hover {
+            background: #ffffff18;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #ffffff14;
+            border: 1px solid #ffffff20;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 12px;
+            color: #ffffff60;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.15s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .code-block:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .copy-btn:hover {
+            background: #ffffff24;
+            color: #ffffffa0;
+        }
+
+        .copy-btn.copied {
+            color: #4ade80;
+            opacity: 1;
+        }
+
+        .callout {
+            background: #ffffff0e;
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            display: flex;
+            gap: 12px;
+        }
+
+        .callout-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .tag {
+            background: #ffffff14;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .section-label {
+            color: #ffffff52;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 30px; }
+            h2 { font-size: 20px; }
+            .page { padding: 24px 16px 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>Как заполнять отчёт в Telegram</h1>
+        <p class="subtitle">Гайд для дизайн-команды Tranio</p>
+
+        <p>Каждый день пишешь в свою группу "Трекер" что сделал за день.</p>
+
+        <hr>
+
+        <h2>Формат</h2>
+        <p>Каждая задача — по шаблону:</p>
+        <div class="code-block">подразделение: что делал — сколько времени — кто отвечает за задачу</div>
+
+        <hr>
+
+        <h2>Подразделение</h2>
+        <p>Пиши в начале каждой задачи:</p>
+        <ul>
+            <li><code>broker</code> — задача для Tranio Brokerage</li>
+            <li><code>capital</code> — задача для Tranio Capital</li>
+        </ul>
+
+        <hr>
+
+        <h2>Время</h2>
+        <p>Пиши как удобно:</p>
+        <ul>
+            <li>Часы: <code>2ч</code>, <code>1.5ч</code>, <code>0.5ч</code></li>
+            <li>Минуты: <code>30м</code>, <code>45м</code>, <code>15м</code></li>
+            <li>Комбинация: <code>2ч 30м</code></li>
+        </ul>
+
+        <hr>
+
+        <h2>Заказчик</h2>
+        <p>Пиши имя того, кто отвечает за задачу:</p>
+        <ul>
+            <li>Лена, Соня, Женя, Алеся, Юля, Влада, Катя, Сергей, Ринат, Марина — Brokerage</li>
+            <li>Георгий, Ира, Макс, Слава, Илья — Capital</li>
+            <li><code>аффилиаты</code> — если задача для партнёрки (даже если пришла от Лены или Сони)</li>
+        </ul>
+
+        <hr>
+
+        <h2>Задача</h2>
+
+        <h3>Пример новой простой задачи</h3>
+        <div class="code-block">broker: Презентация для конференции в Дубае — 3ч — Лена</div>
+
+        <h3>Пример правок в простой задаче</h3>
+        <div class="code-block">broker: Правки презентации для конференции в Дубае — 1ч — Лена</div>
+
+        <h3>Пример задачи для партнёрки</h3>
+        <div class="code-block">broker: Презентация для партнёрской программы — 2ч — аффилиаты</div>
+
+        <h3>Пример задачи как части большого проекта</h3>
+        <p>Например, нам ставят большую задачу — "Новая программа ВНЖ Греции", которая состоит из нескольких подзадач. В этом случае в простой задаче достаточно упомянуть название большой задачи:</p>
+        <div class="code-block">broker: Макет лендинга Новая программа ВНЖ Греции — 3ч — Лена
+broker: Креативы для фейсбука Новая программа ВНЖ Греции — 2ч — Лена
+broker: Тизеры для инстаграм Новая программа ВНЖ Греции — 1ч — Лена</div>
+
+        <p>Правки — так же:</p>
+        <div class="code-block">broker: Правки лендинга Новая программа ВНЖ Греции — 1.5ч — Лена</div>
+
+        <p>Если задача вернулась из бэклога — это доработка:</p>
+        <div class="code-block">broker: Доработка лендинга Новая программа ВНЖ Греции — 2ч — Лена</div>
+
+        <hr>
+
+        <h2>Срочные задачи и задержки фидбэка</h2>
+        <p>Если задача прилетела срочно или вы долго ждали обратную связь — напиши об этом в скобках:</p>
+        <div class="code-block">broker: Правки презентации — 2ч — Лена (ждали фидбэк 5 дней, срочно в конце дня)</div>
+        <div class="code-block">capital: Переделка инфографики — 3ч — Ира (срочно, попросили за час до конца дня)</div>
+        <div class="code-block">broker: Доработка лендинга — 1.5ч — Сергей (фидбэк пришёл через неделю)</div>
+        <p>Это помогает нам видеть реальную картину и понимать откуда берутся авралы.</p>
+
+        <hr>
+
+        <h2>Выходные и отпуск</h2>
+        <p>Если берёшь дей-офф, отпуск или больничный — просто напиши в группу:</p>
+        <div class="code-block">дей-офф</div>
+        <div class="code-block">отпуск 01.04-05.04</div>
+        <div class="code-block">больничный</div>
+
+        <hr>
+
+        <h2>Примеры отчета за день</h2>
+        <p>Можно писать двумя способами — как удобнее:</p>
+
+        <h3>Отдельными сообщениями по ходу дня</h3>
+        <div class="code-block">broker: Презентация для конференции — 3ч — Лена</div>
+        <div class="code-block">broker: Правки лендинга недвижимости — 1.5ч — Сергей</div>
+        <div class="code-block">capital: Инфографика для отчёта инвесторам — 2ч — Ира</div>
+
+        <h3>Одним сообщением в конце дня</h3>
+        <div class="code-block">broker: Презентация для конференции — 3ч — Лена
+broker: Правки лендинга недвижимости — 1.5ч — Сергей
+capital: Инфографика для отчёта инвесторам — 2ч — Ира
+broker: Тизеры для инстаграм — 45м — Соня</div>
+
+        <p>Если ошиблись в сообщении или нужно дополнить — сообщения можно редактировать до 19:59. Бот забирает сообщения в обработку в 20:00.</p>
+
+        <hr>
+
+        <div class="callout">
+            <span class="callout-icon">💬</span>
+            <span>Если что-то непонятно — спроси Андрея.</span>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.code-block').forEach(block => {
+            const btn = document.createElement('button');
+            btn.className = 'copy-btn';
+            btn.textContent = 'Copy';
+            block.style.position = 'relative';
+            block.appendChild(btn);
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const text = block.textContent.replace('Copy', '').replace('Copied', '').trim();
+                navigator.clipboard.writeText(text);
+                btn.textContent = 'Copied';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 1500);
+            });
+
+            block.addEventListener('click', () => {
+                const text = block.textContent.replace('Copy', '').replace('Copied', '').trim();
+                navigator.clipboard.writeText(text);
+                btn.textContent = 'Copied';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
